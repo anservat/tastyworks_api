@@ -41,7 +41,9 @@ async def main_loop(session: TastyAPISession, streamer: DataStreamer):
     details = OrderDetails(
         type=OrderType.LIMIT,
         price=Decimal(400),
-        price_effect=OrderPriceEffect.CREDIT)
+        price_effect=OrderPriceEffect.CREDIT,
+        time_in_force=TimeInForce.GTC
+    )
     new_order = Order(details)
 
     opt = Option(
